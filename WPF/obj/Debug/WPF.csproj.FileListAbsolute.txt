@@ -1,0 +1,15 @@
+C:\Users\Hubi\source\repos\Steganografia\WPF\bin\Debug\WPF.exe.config
+C:\Users\Hubi\source\repos\Steganografia\WPF\bin\Debug\WPF.exe
+C:\Users\Hubi\source\repos\Steganografia\WPF\bin\Debug\WPF.pdb
+C:\Users\Hubi\source\repos\Steganografia\WPF\obj\Debug\WPF.csprojResolveAssemblyReference.cache
+C:\Users\Hubi\source\repos\Steganografia\WPF\obj\Debug\MainWindow.g.cs
+C:\Users\Hubi\source\repos\Steganografia\WPF\obj\Debug\App.g.cs
+C:\Users\Hubi\source\repos\Steganografia\WPF\obj\Debug\WPF_MarkupCompile.cache
+C:\Users\Hubi\source\repos\Steganografia\WPF\obj\Debug\WPF_MarkupCompile.lref
+C:\Users\Hubi\source\repos\Steganografia\WPF\obj\Debug\MainWindow.baml
+C:\Users\Hubi\source\repos\Steganografia\WPF\obj\Debug\WPF.g.resources
+C:\Users\Hubi\source\repos\Steganografia\WPF\obj\Debug\WPF.Properties.Resources.resources
+C:\Users\Hubi\source\repos\Steganografia\WPF\obj\Debug\WPF.csproj.GenerateResource.Cache
+C:\Users\Hubi\source\repos\Steganografia\WPF\obj\Debug\WPF.csproj.CoreCompileInputs.cache
+C:\Users\Hubi\source\repos\Steganografia\WPF\obj\Debug\WPF.exe
+C:\Users\Hubi\source\repos\Steganografia\WPF\obj\Debug\WPF.pdb

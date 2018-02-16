@@ -1,0 +1,111 @@
+﻿<Window x:Class="WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="481" Width="978">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF82D2F7" Offset="0.767"/>
+            <GradientStop Color="#FF29576C"/>
+            <GradientStop Color="#FF84969C" Offset="1"/>
+            <GradientStop Color="#FF50B0DD" Offset="0.578"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Left" Height="430" Margin="4,10,0,0" VerticalAlignment="Top" Width="950" Grid.Column="1" >
+            <TabItem Header="Least Significant Bit" Margin="-2,-2,-2,0">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-1,0">
+                    <Border BorderThickness="1" BorderBrush="#FF000000" VerticalAlignment="Top" Margin="330,10,315,0" Height="352">
+                        <Image x:Name="image_LSB_loaded" HorizontalAlignment="Left" Height="282" Margin="9,9,0,0" VerticalAlignment="Top" Width="280"/>
+                    </Border>
+                    <Border BorderThickness="1" BorderBrush="#FF000000" VerticalAlignment="Top" Margin="635,10,10,0" Height="352">
+                        <Image x:Name="image_LSB_transformed" HorizontalAlignment="Left" Height="282" Margin="9,9,0,0" VerticalAlignment="Top" Width="280"/>
+                    </Border>
+                    <Label Content="Loaded Image" HorizontalAlignment="Left" Margin="330,367,0,0" RenderTransformOrigin="-0.079,-1" Width="300"
+                           HorizontalContentAlignment="Center" FontSize="14"/>
+                    <Label Content="Transformed Image" HorizontalAlignment="Left" Margin="635,367,0,0" RenderTransformOrigin="-0.079,-1" Width="300"
+                        HorizontalContentAlignment="Center" FontSize="14"/>
+                    <Button x:Name ="button_lsb_load" Content="Load Image" HorizontalAlignment="Left" Margin="74,10,0,0" VerticalAlignment="Top" Width="146" Height="39" FontSize="18" Click="button_lsb_load_Click" />
+                    <Button x:Name ="button_lsb_transform" IsEnabled="false" Content="Transform Image" HorizontalAlignment="Left" Margin="179,318,0,0" VerticalAlignment="Top" Width="146" Height="39" FontSize="18" Click="button_lsb_transform_Click" />
+                    <Grid HorizontalAlignment="Left" Height="102" Margin="10,54,0,0" VerticalAlignment="Top" Width="315">
+                        <TextBox x:Name ="textbox_how_many" IsEnabled="false" HorizontalAlignment="Left" Height="23" Margin="79,40,0,0" TextWrapping="Wrap" TextChanged="textbox_how_many_TextChanged" VerticalAlignment="Top" Width="120"/>
+                        <Label Content="How many bits in evry pixel you want to allocate? (1-24)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,9,0,0" Width="305"/>
+                        <Label Content="Maximum length of the Message" HorizontalAlignment="Left" Margin="14,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.895,0.692" Width="185"/>
+                        <TextBox x:Name="textbotx_max_length" IsEnabled="false" HorizontalAlignment="Left" Height="23" Margin="204,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="85"/>
+                    </Grid>
+                    <Grid HorizontalAlignment="Left" Height="105" Margin="10,161,0,0" VerticalAlignment="Top" Width="315">
+                        <Button x:Name ="button_crytpogram_load" IsEnabled="false" Content="Load Message" HorizontalAlignment="Left" Margin="66,10,0,0" VerticalAlignment="Top" Width="146" Height="39" FontSize="18" Click="button_crytpogram_load_Click" />
+                        <Label Content="Length of the Message" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="66,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.895,0.692" Width="146"/>
+                        <Label x:Name ="l_msg_length" Content="" HorizontalAlignment="Left" Margin="212,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.421,0.231" Width="86"/>
+                        <Label x:Name="l_difference" HorizontalAlignment="Left" Margin="217,80,0,0" VerticalAlignment="Top" Height="25" Width="81"/>
+                    </Grid>
+                    <Grid HorizontalAlignment="Left" Height="59" Margin="10,331,0,0" VerticalAlignment="Top" Width="138">
+                        <RadioButton x:Name ="radio_Vertical" Content="Vertical" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="22" Width="114" IsChecked="True"/>
+                        <RadioButton x:Name ="radio_horizontal" Content="Horizontal" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                    <Button x:Name ="t_save_img" Content="Save Image" IsEnabled="false" HorizontalAlignment="Left" Margin="179,362,0,0" VerticalAlignment="Top" Width="146" Height="36" FontSize="18" Click="t_save_img_Click"/>
+                    <Grid HorizontalAlignment="Left" Height="52" Margin="10,266,0,0" VerticalAlignment="Top" Width="315">
+                        <TextBox x:Name ="t_begin" TextChanged ="t_begin_TextChanged"  HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+                        <TextBox x:Name ="t_end" TextChanged="t_end_TextChanged" HorizontalAlignment="Left" Height="23" Margin="185,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+                        <Label Content="Begin pixel"   HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" Height="29" Width="120"/>
+                        <Label Content="End pixel" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="185,23,0,0" VerticalAlignment="Top" Height="29" Width="120"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Info">
+                <Grid Background="#FFE5E5E5" Margin="10,3,8,6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="249*"/>
+                        <ColumnDefinition Width="677*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Algorytm najmniej znaczącego bitu" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="80" Margin="10,10,5,0" VerticalAlignment="Top" Width="911" FontSize="36" Grid.ColumnSpan="2"/>
+                    <Label Content="Szyfrowana wiadomość (ciąg bitów) jest umieszczana w najmniej &#xD;&#xA;znaczacych bitach pixeli obrazu , który ma skrywać wiadomość. &#xD;&#xA;Ze względu na bardzo małe różnice w wartościach koloru wiadomość &#xD;&#xA;jest nie widzialna na pierwszy rzut oka." HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" Height="288" Width="906" FontSize="28" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Instrukcja obsługi">
+                <Grid Background="#FFE5E5E5" Margin="10,3,8,6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="249*"/>
+                        <ColumnDefinition Width="677*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Ukrywanie wiadomości w obrazie" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="37" Margin="218,0,277,0" VerticalAlignment="Top" Width="431" FontSize="24
+" Grid.ColumnSpan="2"/>
+                    <Label Content="1. Aby ukryć wiadomość w obrazie, musimy najpierw wczytać obraz (przycisk &quot;Load Image&quot;).&#xA;&#xA;2. Następnie wybieramy ile bitów z każdego pixela chemy przeznaczyć na ukrywanie wiadomości.&#xA;                   (Im więcej bitów przeznaczymy tym deformacja obrazu będzie bardziej widoczna)&#xA;&#x9;&#xA;3. Po wybraniu ilości bitów, możemy wczytać wiadomość za pomocą przycku &quot;load message&quot;, wiadomość może &#xD;&#xA;&#x9;być dowolnego typu. W okinie &quot;begin&quot; możemy wpisać numer pixela od którego ma sie zacząć &#xD;&#xA;&#x9;ukrywanie wiadomości. Możemy także wybrać czy ukrywanie ma się odbywać poziomo czy pionowo.&#xA;&#xA;4. Po wybraniu interesujących nas opcji klikamy przycisk &quot;Transform Image&quot;, efekt naszej transformacji pojawi się &#xA;&#x9;w ramce &quot;Transformed Image&quot;&#xA;&#xA;5. Aby zapisać efekttransformacji klikamy przycisk &quot;Save Image&quot;" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Height="346" Width="906" FontSize="18
+                           " Grid.ColumnSpan="2"/>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Decoder" Margin="0,-2,-2,0" HorizontalAlignment="Right" Width="58">
+                <Grid Background="#FFE5E5E5">
+                    <Border BorderThickness="1" BorderBrush="#FF000000" VerticalAlignment="Top" Margin="634,10,10,0" Height="382">
+                        <Image x:Name="image_with_msg" HorizontalAlignment="Left" Height="282" Margin="9,9,0,0" VerticalAlignment="Top" Width="280"/>
+                    </Border>
+                    <Button x:Name ="button_lsb_load_Copy" Content="Load Image with message" HorizontalAlignment="Left" Margin="31,10,0,0" VerticalAlignment="Top" Width="237" Height="39" FontSize="18" Click="button_lsb_load_Copy_Click"  />
+
+                    <TextBox x:Name ="Wynik" HorizontalAlignment="Left" Height="278" TextWrapping="Wrap" VerticalAlignment="Top" Width="619" Margin="10,114,0,0"/>
+
+                    <TextBox x:Name ="textbox_how_many_Copy" HorizontalAlignment="Left" Height="23" Margin="31,54,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" TextChanged="t_hm_TextChanged" />
+                    <TextBox x:Name="t_decode_length" HorizontalAlignment="Left" Height="23" Margin="156,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="85"/>
+                    <Grid HorizontalAlignment="Left" Height="57" Margin="360,20,0,0" VerticalAlignment="Top" Width="105">
+                        <RadioButton x:Name ="radio_Vertical1" Content="Vertical" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="22" Width="114" IsChecked="True"/>
+                        <RadioButton x:Name ="radio_horizontal1" Content="Horizontal" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                    <Button Content="Decode" HorizontalAlignment="Left" Margin="470,10,0,0" VerticalAlignment="Top" Width="159" Height="57" FontSize="18" Click="Button_Click"/>
+                    <Label Content="Bits in pixel" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="31,77,0,0" VerticalAlignment="Top" Height="27" Width="120"/>
+                    <Label Content="Length" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="156,82,0,0" VerticalAlignment="Top" Height="27" Width="85"/>
+                    <TextBox x:Name ="t_decode_begin" HorizontalAlignment="Left" Height="23" Margin="246,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85"/>
+                    <Label Content="Begin" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="246,82,0,0" VerticalAlignment="Top" Height="27" Width="85"/>
+                    <Button Content="Save" HorizontalAlignment="Left" Margin="470,72,0,0" VerticalAlignment="Top" Width="159" Height="32" Click="Button_Click_1"/>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>
